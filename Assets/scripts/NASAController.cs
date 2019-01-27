@@ -7,7 +7,6 @@ using Newtonsoft.Json.Linq;
 
 public class Asteroid
 {
-    
     public string name { get; set; }
     public string estimatedDiameter { get; set; }
     public bool isPHA {get; set;}
@@ -16,6 +15,16 @@ public class Asteroid
     public string orbitingBody { get; set; }
     public double velocity { get; set; }
     
+    public string print()
+    {
+        return "Name: "+this.name+
+            "\nEstimated Diameter: "+this.estimatedDiameter+
+            "\nIs Potentially Hazardous Asteroids: "+this.isPHA+
+            "\nClose Approach Date: "+this.closeApproachDate+
+            "\nMiss Distance: "+this.missDistance+
+            "\nOrbiting Body: "+this.orbitingBody+
+            "\nVelocity: "+this.velocity;
+    }
 }
 
 public class NASAController : MonoBehaviour
@@ -23,6 +32,12 @@ public class NASAController : MonoBehaviour
     private const string API_KEY = "rCo1Z0qbjWq1xdKXx2XwLBEYwVv46DF26i0b2vvc";
     private const float API_FETCH_INTERVAL = 10 * 60.0f; //10 minutes
     private float apiCheckCountdown = API_FETCH_INTERVAL;
+
+    public GameObject Asteroid_1;
+    public GameObject Asteroid_2;
+    public GameObject Asteroid_3;
+
+    public GameObject Earth;
 
     public string startDate;
     public string endDate;
@@ -87,7 +102,50 @@ public class NASAController : MonoBehaviour
         
         foreach(Asteroid a in asteroids)
         {
-            
+            int rand = Random.Range(0, 3);
+            GameObject ast;
+            switch (rand)
+            {
+                case 0:
+                    ast = Asteroid_1;
+                    break;
+                case 1:
+                    ast = Asteroid_2;
+                    break;
+                case 3:
+                default:
+                    ast = Asteroid_3;
+                    break;
+            }
+
+            bool isBehind;
+            if (Random.Range(0f, 1f) < 0.5f)
+            {
+                isBehind = true;
+            }
+            else
+            {
+                isBehind = false;
+            }
+
+            Vector3 pos;
+            if (isBehind)
+            {
+                pos = new Vector3(Random.Range(-20f, -5f), Random.Range(-10f, -5f), Random.Range(-20f,20f));
+            }
+            else
+            {
+                pos = new Vector3(Random.Range(5f, 20f), Random.Range(5f, 10f), Random.Range(-20f, 20f));
+            }
+
+            GameObject obj = Instantiate(ast, Earth.transform, instantiateInWorldSpace: true) as GameObject;
+            obj.transform.position = pos;
+
+            float diameter = float.Parse(a.estimatedDiameter.Split('-')[0]);
+            obj.transform.localScale = new Vector3(diameter*0.005f, diameter*0.005f, diameter*0.005f);
+
+            HoverController hc = obj.GetComponent<HoverController>();
+            hc.setAsteroid(a);
         }
 
     }

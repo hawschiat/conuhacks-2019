@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour
 
         float scroll = Input.mouseScrollDelta.y;
 
-        if ((scroll > 0f && cam.fieldOfView < 100f) || (scroll < 0f && cam.fieldOfView > 40f))  //scroll
+        if ((scroll > 0f && cam.fieldOfView < 100f) || (scroll < 0f && cam.fieldOfView > 35f))  //scroll
         {
             cam.fieldOfView += scroll * 0.5f;
         }

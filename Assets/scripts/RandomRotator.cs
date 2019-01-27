@@ -13,7 +13,6 @@ public class RandomRotator : MonoBehaviour {
 
     private void Start()
     {
-         
         rb.angularVelocity = Random.insideUnitSphere * tumble;
     }
 }

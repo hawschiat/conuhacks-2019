@@ -10,8 +10,8 @@ public class Spin : MonoBehaviour
         
     }
     public float speed;
-    // Update is called once per frame
-    void Update()
+
+    void FixedUpdate()
     {
         transform.Rotate(0, speed, 0);
     }
