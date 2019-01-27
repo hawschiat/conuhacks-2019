@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.04344748, g: 0.04184796, b: 0.044882335, a: 1}
+  m_IndirectSpecularColor: {r: 0.018137835, g: 0.017764853, b: 0.018806174, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -112,53 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &499093745
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 499093746}
-  - component: {fileID: 499093747}
-  m_Layer: 0
-  m_Name: Flare
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &499093746
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 499093745}
-  m_LocalRotation: {x: -0.07156095, y: -0.050382137, z: -0.03201793, w: 0.9956483}
-  m_LocalPosition: {x: 0.031813893, y: -0.002332391, z: 0.013949228}
-  m_LocalScale: {x: 8.924702, y: 8.924704, z: 8.924702}
-  m_Children: []
-  m_Father: {fileID: 1810345610}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!123 &499093747
-LensFlare:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 499093745}
-  m_Enabled: 1
-  m_Flare: {fileID: 12100000, guid: 54fbbf098d116effa00081aba8ad6659, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_Brightness: 1
-  m_FadeSpeed: 20
-  m_IgnoreLayers:
-    serializedVersion: 2
-    m_Bits: 2
-  m_Directional: 0
 --- !u!1 &534187643
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +143,7 @@ Transform:
   m_LocalScale: {x: 378.04102, y: 378.041, z: 378.04102}
   m_Children: []
   m_Father: {fileID: 1810345610}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &534187645
 SphereCollider:
@@ -671,8 +624,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 5
-  m_Range: 1368.9
+  m_Intensity: 1
+  m_Range: 8655
   m_SpotAngle: 20
   m_CookieSize: 10
   m_Shadows:
@@ -685,7 +638,7 @@ Light:
     m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
-  m_Flare: {fileID: 0}
+  m_Flare: {fileID: 12100000, guid: 09ebe82dbd1113c3d000dc0b8d76c639, type: 2}
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
@@ -709,7 +662,6 @@ Transform:
   m_LocalPosition: {x: -87.904, y: 38.183, z: -536.18005}
   m_LocalScale: {x: 0.11204857, y: 0.11204855, z: 0.11204858}
   m_Children:
-  - {fileID: 499093746}
   - {fileID: 534187644}
   m_Father: {fileID: 929557249}
   m_RootOrder: 0
