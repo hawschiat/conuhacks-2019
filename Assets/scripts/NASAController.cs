@@ -5,7 +5,6 @@ using Newtonsoft.Json;
 using UnityEngine.Networking;
 using Newtonsoft.Json.Linq;
 
-
 public class Asteroid
 {
     
