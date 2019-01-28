@@ -807,7 +807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 200
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
@@ -927,7 +927,7 @@ PrefabInstance:
     - target: {fileID: 7920283900397837536, guid: 000fc6e6b5a6cf9408fd5ebf238b77f6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -271.2
+      value: -306.91
       objectReference: {fileID: 0}
     - target: {fileID: 7920283900397837536, guid: 000fc6e6b5a6cf9408fd5ebf238b77f6,
         type: 3}
