@@ -37,6 +37,8 @@ public class NASAController : MonoBehaviour
     public GameObject Asteroid_2;
     public GameObject Asteroid_3;
 
+    public GameObject ui;
+
     public GameObject Earth;
 
     public string startDate;
@@ -144,8 +146,9 @@ public class NASAController : MonoBehaviour
             float diameter = float.Parse(a.estimatedDiameter.Split('-')[0]);
             obj.transform.localScale = new Vector3(diameter*0.005f, diameter*0.005f, diameter*0.005f);
 
+            HoverData hd = new HoverData(ui, a);
             HoverController hc = obj.GetComponent<HoverController>();
-            hc.setAsteroid(a);
+            hc.startHover(hd);
         }
 
     }

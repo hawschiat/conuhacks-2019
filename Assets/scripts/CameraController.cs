@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
         float top = Screen.height * 0.2f;
         float bottom = Screen.height - (Screen.height * 0.2f);
 
-        float scroll = Input.mouseScrollDelta.y;
+        float scroll = -1f*Input.mouseScrollDelta.y;
 
         if ((scroll > 0f && cam.fieldOfView < 100f) || (scroll < 0f && cam.fieldOfView > 35f))  //scroll
         {

@@ -5,29 +5,40 @@ using UnityEngine.UI;
 
 public class HoverController : MonoBehaviour
 {
-    public GameObject ui;
-    public Asteroid asteroid;
+    public HoverData hd;
+
+    public void startHover(HoverData hd)
+    {
+        this.hd = hd;
+    }
 
     void Start()
     {
-        ui.SetActive(false);
-    }
-
-    public void setAsteroid(Asteroid obj)
-    {
-        asteroid = obj;
+        hd.ui.SetActive(false);
     }
 
     void OnMouseOver()
     {
-        Time.timeScale = 0.0f;
-        ui.GetComponentInChildren<Text>().text = asteroid.print();
-        ui.SetActive(true);
+        Time.timeScale = 0.3f;
+        hd.ui.GetComponent<Text>().text = hd.asteroid.print();
+        hd.ui.SetActive(true);
     }
 
     void OnMouseExit()
     {
         Time.timeScale = 1f;
-        ui.SetActive(false);
+        hd.ui.SetActive(false);
+    }
+}
+
+public class HoverData
+{
+    public GameObject ui;
+    public Asteroid asteroid;
+
+    public HoverData(GameObject ui, Asteroid a)
+    {
+        this.ui = ui;
+        this.asteroid = a;
     }
 }
